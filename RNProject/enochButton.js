@@ -1,86 +1,93 @@
-const React = require('react');
-const ReactNative = require('react-native');
-const {
-  Alert,
-  Button,
+import React, { Component } from 'react';
+import {
+  StyleSheet,
+  Text,
   View,
-} = ReactNative;
-
-const onButtonPress = () => {
-  Alert.alert('Button has been pressed!');
-};
-
-exports.displayName = 'ButtonExample';
-exports.framework = 'React';
-exports.title = '<Button>';
-exports.description = 'Simple React Native button component.';
-
-exports.examples = [
-  {
-    title: 'Simple Button',
-    description: 'The title and onPress handler are required. It is ' +
-      'recommended to set accessibilityLabel to help make your app usable by ' +
-      'everyone.',
-    render: function() {
-      return (
-        <Button
-          onPress={onButtonPress}
-          title="Press Me"
-          accessibilityLabel="See an informative alert"
-        />
-      );
-    },
+  TabBarIOS,
+} from 'react-native';
+ 
+export default class TabBarIOSDemo extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+         selectedTab: '',
+       notifCount: 0,
+       presses: 0,
+    };
+  }
+  //进行渲染页面内容
+  _renderContent(color: string, pageText: string, num?: number) {
+    return (
+      <View style={[styles.tabContent, {backgroundColor: color}]}>
+        <Text style={styles.tabText}>{pageText}</Text>
+        <Text style={styles.tabText}>第 {num} 次重复渲染{pageText}</Text>
+      </View>
+    );
+  }
+  render() {
+    return (
+      <View style={{flex:1}}>
+        <Text style={styles.welcome}>
+          TabBarIOS使用实例
+        </Text>
+        <TabBarIOS
+        style={{flex:1,alignItems:"flex-end"}}
+        tintColor="white"
+        barTintColor="darkslateblue">
+        <TabBarIOS.Item
+          title="自定义"
+          icon={require('./src/pfb_tabbar_homepage.png')}
+          selected={this.state.selectedTab === '自定义'}
+          onPress={() => {
+            this.setState({
+              selectedTab: '自定义',
+            });
+          }}
+          >
+          {this._renderContent('#414A8C', '自定义界面')}
+        </TabBarIOS.Item>
+        <TabBarIOS.Item
+          systemIcon="history"
+          selected={this.state.selectedTab === '历史'}
+          badge={this.state.notifCount > 0 ? this.state.notifCount : undefined}
+          onPress={() => {
+            this.setState({
+              selectedTab: '历史',
+              notifCount: this.state.notifCount + 1,
+            });
+          }}
+          >
+          {this._renderContent('#783E33', '历史记录', this.state.notifCount)}
+        </TabBarIOS.Item>
+        <TabBarIOS.Item
+           systemIcon="downloads"
+           selected={this.state.selectedTab === '下载'}
+            onPress={() => {
+            this.setState({
+              selectedTab: '下载',
+              presses: this.state.presses + 1
+            });
+          }}>
+           {this._renderContent('#21551C', '下载页面', this.state.presses)}
+        </TabBarIOS.Item>
+ 
+      </TabBarIOS>
+      </View>
+    );
+  }
+}
+const styles = StyleSheet.create({
+  tabContent: {
+    flex: 1,
+    alignItems: 'center',
   },
-  {
-    title: 'Adjusted color',
-    description: 'Adjusts the color in a way that looks standard on each ' +
-      'platform. On iOS, the color prop controls the color of the text. On ' +
-      'Android, the color adjusts the background color of the button.',
-    render: function() {
-      return (
-        <Button
-          onPress={onButtonPress}
-          title="Press Purple"
-          color="#841584"
-          accessibilityLabel="Learn more about purple"
-        />
-      );
-    },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    marginTop: 20,
   },
-  {
-    title: 'Fit to text layout',
-    description: 'This layout strategy lets the title define the width of ' +
-      'the button',
-    render: function() {
-      return (
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <Button
-            onPress={onButtonPress}
-            title="This looks great!"
-            accessibilityLabel="This sounds great!"
-          />
-          <Button
-            onPress={onButtonPress}
-            title="Ok!"
-            color="#841584"
-            accessibilityLabel="Ok, Great!"
-          />
-        </View>
-      );
-    },
+  tabText: {
+    color: 'white',
+    margin: 50,
   },
-  {
-    title: 'Disabled Button',
-    description: 'All interactions for the component are disabled.',
-    render: function() {
-      return (
-        <Button
-          disabled
-          onPress={onButtonPress}
-          title="I Am Disabled"
-          accessibilityLabel="See an informative alert"
-        />
-      );
-    },
-  },
-];
+});

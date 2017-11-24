@@ -20,6 +20,8 @@ import EnochNavigator from './enochNavigator'
 import EnochTextInput from './enochTextInput'
 import EnochScrollView from './enochScrollView'
 import EnochButton from './enochButton'
+import EnochSegmented from './enochSegmented'
+import EnochTab from './enochTab'
 
 export default class RNProjectDemo extends Component {
   render() {
@@ -35,7 +37,9 @@ export default class RNProjectDemo extends Component {
       //滚动视图
       // <EnochScrollView/>
       //Button
-      <EnochButton/>
+      // <EnochButton/>
+      // <EnochSegmented/>
+      <EnochTab/>
     );
   }
 }
