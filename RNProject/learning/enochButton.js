@@ -36,7 +36,7 @@ export default class TabBarIOSDemo extends Component {
         barTintColor="darkslateblue">
         <TabBarIOS.Item
           title="自定义"
-          icon={require('./src/pfb_tabbar_homepage.png')}
+          icon={require('../src/pfb_tabbar_homepage.png')}
           selected={this.state.selectedTab === '自定义'}
           onPress={() => {
             this.setState({
