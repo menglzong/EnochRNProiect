@@ -8,7 +8,7 @@ import {
     Button
 } from 'react-native';
 
-import EnochTest from '../enochTab'
+import EnochTest from '../../enochTab'
 
 export default class EnochHomePage extends Component {
 
@@ -16,6 +16,9 @@ export default class EnochHomePage extends Component {
     this.props.navigator.push({
         component: EnochTest,
         title: 'My Initial Scene',
+        passProps: {
+          text: 'This page has a right button in the nav bar',
+        }
     });
   }
 

@@ -13,10 +13,10 @@ import {
     NavigatorIOS
   } from 'react-native';
 
-import EnochHomePage from './RootScene/EnochHomePage'
-import EnochMerchant from './RootScene/EnochMerchant'
-import EnochOrder from './RootScene/EnochOrder'
-import EnochMine from './RootScene/EnochMine'
+import EnochHomePage from './RootScene/Home/EnochHomePage'
+import EnochMerchant from './RootScene/Merchant/EnochMerchant'
+import EnochOrder from './RootScene/Order/EnochOrder'
+import EnochMine from './RootScene/Mine/EnochMine'
 // import EnochTest from './enochTab'
 
 var TabItemIOS = TabBarIOS.Item;

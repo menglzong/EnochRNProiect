@@ -17,8 +17,12 @@ import EnochButton from './learning/enochButton'
 import EnochSegmented from './learning/enochSegmented'
 
 export default class RNProjectDemo extends Component {
+
   render() {
     return (
+      <View style={{flex: 1}}>
+        <Text style={{flex: 1, marginTop: 64}}> {this.props.text}</Text>
+      </View>
       //布局
       // <FlexDirectionBasics/>
       //QQ登陆
@@ -31,7 +35,7 @@ export default class RNProjectDemo extends Component {
       // <EnochScrollView/>
       //Button
       // <EnochButton/>
-      <EnochSegmented/>
+      // <EnochSegmented/>
       // <EnochTab/>
     );
   }
