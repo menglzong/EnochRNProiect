@@ -6,7 +6,7 @@ import { AppRegistry, View } from 'react-native';
   render() {
     return (
       // 尝试把`flexDirection`改为`column`看看
-      <View style={{flex: 1, flexDirection: 'column'}}>
+      <View style={{flex: 1, flexDirection: 'row'}}>
         <View style={{flex: 1, backgroundColor: 'powderblue'}} />
         <View style={{flex: 2, backgroundColor: 'skyblue'}} />
         <View style={{flex: 3, backgroundColor: 'steelblue'}} />
@@ -22,8 +22,8 @@ class JustifyContentBasics extends Component {
       // 尝试把`flexDirection`改为`row`看看 flex-start、center、flex-end、space-around以及space-between
       <View style={{
         flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-around',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
       }}>
         <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
         <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
@@ -42,13 +42,13 @@ class AlignItemsBasics extends Component {
       //注意：要使stretch选项生效的话，子元素在次轴方向上不能有固定的尺寸。以下面的代码为例：只有将子元素样式中的width: 50去掉之后，alignItems: 'stretch'才能生效
       <View style={{
         flex: 1,
-        flexDirection: 'column',
+        flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'stretch',
       }}>
-        <View style={{height: 50, backgroundColor: 'powderblue'}} />
-        <View style={{height: 50, backgroundColor: 'skyblue'}} />
-        <View style={{height: 50, backgroundColor: 'steelblue'}} />
+        <View style={{width: 50, backgroundColor: 'powderblue'}} />
+        <View style={{width: 50, backgroundColor: 'skyblue'}} />
+        <View style={{width: 50, backgroundColor: 'steelblue'}} />
       </View>
     );
   }

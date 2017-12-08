@@ -15,14 +15,12 @@ import EnochTextInput from './learning/enochTextInput'
 import EnochScrollView from './learning/enochScrollView'
 import EnochButton from './learning/enochButton'
 import EnochSegmented from './learning/enochSegmented'
+import EnochFlex from './learning/enochFlex'
 
 export default class RNProjectDemo extends Component {
 
   render() {
     return (
-      <View style={{flex: 1}}>
-        <Text style={{flex: 1, marginTop: 64}}> {this.props.text}</Text>
-      </View>
       //布局
       // <FlexDirectionBasics/>
       //QQ登陆
@@ -32,11 +30,12 @@ export default class RNProjectDemo extends Component {
       //输入文本
       // <EnochTextInput/>
       //滚动视图
-      // <EnochScrollView/>
+      <EnochScrollView/>
       //Button
       // <EnochButton/>
       // <EnochSegmented/>
       // <EnochTab/>
+      // <EnochFlex/>
     );
   }
 }

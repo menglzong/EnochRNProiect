@@ -35,8 +35,8 @@ class EnochListView extends Component {
              />
              <SectionList style = {{flex: 1, backgroundColor:'red'}}
              sections = {[
-                 {title: 'D', data: [{key: 'Devin'}]},
-                 {title: 'J',  data: [
+                 {key: 1,title: 'D', data: [{key: 'Devin'}]},
+                 {key: 2,title: 'J',  data: [
                     {key: 'Devin'},
                     {key: 'Jackson'},
                     {key: 'James'},
