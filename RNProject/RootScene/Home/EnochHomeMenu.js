@@ -46,7 +46,7 @@ export default class EnochHomeMenu extends Component {
 
 const styles = StyleSheet.create({
     contentContainer: {
-        marginTop: 64,
+        marginTop: 0,
         flexDirection: 'row',
         flexWrap: 'wrap',
         alignItems:'flex-start',

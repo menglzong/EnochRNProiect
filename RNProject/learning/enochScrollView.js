@@ -16,6 +16,24 @@ class EnochScrollView extends Component {
     }
 }
 
+// <SectionList style = {{flex: 1, backgroundColor:'red'}}
+// sections = {[
+//     {key: 1,title: 'D', data: [{key: 'Devin'}]},
+//     {key: 2,title: 'J',  data: [
+//        {key: 'Devin'},
+//        {key: 'Jackson'},
+//        {key: 'James'},
+//        {key: 'Joel'},
+//        {key: 'John'},
+//        {key: 'Jillian'},
+//        {key: 'Jimmy'},
+//        {key: 'Julie'}
+//       ]}
+// ]}
+// renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+// renderSectionHeader = {({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
+// />
+
 class EnochListView extends Component {
     render () {
         return (
@@ -33,23 +51,7 @@ class EnochListView extends Component {
                ]}
                renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
              />
-             <SectionList style = {{flex: 1, backgroundColor:'red'}}
-             sections = {[
-                 {key: 1,title: 'D', data: [{key: 'Devin'}]},
-                 {key: 2,title: 'J',  data: [
-                    {key: 'Devin'},
-                    {key: 'Jackson'},
-                    {key: 'James'},
-                    {key: 'Joel'},
-                    {key: 'John'},
-                    {key: 'Jillian'},
-                    {key: 'Jimmy'},
-                    {key: 'Julie'}
-                   ]}
-             ]}
-             renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
-             renderSectionHeader = {({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
-           />
+
             </View>
         );
     }
