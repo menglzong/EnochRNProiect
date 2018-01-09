@@ -20,7 +20,7 @@ export default class EnochHomeMenu extends Component {
 
     render() {
 
-        let { menuInfos, onMenuSelected } = this.props
+        var { menuInfos, onMenuSelecteds} = this.props
 
         let menuItems = menuInfos.map(
             (info, i) => (
@@ -28,9 +28,7 @@ export default class EnochHomeMenu extends Component {
                 key = {info.title}//没有出现警告
                 icon = {info.icon}
                 title = {info.title}
-                onPress = {() => {
-                    onMenuSelected && onMenuSelected(i)
-                }}>
+                onPress = {_ => {onMenuSelecteds}}>
                     
                 </EnochMenuItem>
             )

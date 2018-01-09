@@ -19,7 +19,7 @@
   NSURL *jsCodeLocation;
   
 #if DEBUG
-  [[RCTBundleURLProvider sharedSettings] setJsLocation:@"192.168.62.227"];   //此处是你调试电脑的IP，不要乱写
+  [[RCTBundleURLProvider sharedSettings] setJsLocation:@"192.168.9.49"];   //此处是你调试电脑的IP，不要乱写
 #endif
   
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];

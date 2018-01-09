@@ -1,18 +1,19 @@
 
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import { 
     StyleSheet, 
     View,
     Text,
     NavigatorIOS,
     FlatList,
+    TouchableOpacity
 } from 'react-native';
 
 import EnochMenuView from './EnochHomeMenu'
 
 let recommend = 'http://api.meituan.com/group/v1/recommend/homepage/city/1?__skck=40aaaf01c2fc4801b9c059efcd7aa146&__skcy=mrUZYo7999nH8WgTicdfzaGjaSQ=&__skno=51156DC4-B59A-4108-8812-AD05BF227A47&__skts=1434530933.303717&__skua=bd6b6e8eadfad15571a15c3b9ef9199a&__vhost=api.mobile.meituan.com&ci=1&client=iphone&limit=40&movieBundleVersion=100&msid=48E2B810-805D-4821-9CDD-D5C9E01BC98A2015-06-17-14-50363&offset=0&position=39.983497,116.318042&userId=10086&userid=10086&utm_campaign=AgroupBgroupD100Fab_chunceshishuju__a__a___b1junglehomepagecatesort__b__leftflow___ab_gxhceshi__nostrategy__leftflow___ab_gxhceshi0202__b__a___ab_pindaochangsha__a__leftflow___ab_xinkeceshi__b__leftflow___ab_gxtest__gd__leftflow___ab_gxh_82__nostrategy__leftflow___ab_pindaoshenyang__a__leftflow___i_group_5_2_deallist_poitype__d__d___ab_b_food_57_purepoilist_extinfo__a__a___ab_trip_yidizhoubianyou__b__leftflow___ab_i_group_5_3_poidetaildeallist__a__b___ab_waimaizhanshi__b__b1___a20141120nanning__m1__leftflow___ab_pind'
 
-export default class EnochHomePage extends Component {
+export default class EnochHomePage extends PureComponent {
 
   state = {
     dataList: [
@@ -29,8 +30,6 @@ export default class EnochHomePage extends Component {
 
   constructor(props: Object) {
     super(props)
-    
-    // this._requestRecommend
     this.requestRecommend()
   }
 
@@ -48,12 +47,14 @@ export default class EnochHomePage extends Component {
     alert('你好'+ index)
   }
 
+  onCellSelected(info: Object){
+    alert(info.title)
+  }
 
-async requestRecommend() {
+  async requestRecommend() {
     try {
         let response = await fetch(recommend)
         let json = await response.json()
-        alert(json)
         let list = json.data.map(
             (info) => {
                 return {
@@ -73,11 +74,11 @@ async requestRecommend() {
     } catch (error) {
         
     }
-}
+  }
 
-renderHeader() {
+  renderHeader() {
 
-  let menuInfos = [
+    let menuInfos = [
     { title: '美食', icon: require('../../src/icon_homepage_default.png') },
     { title: '电影', icon: require('../../src/icon_homepage_default.png') },
     { title: '酒店', icon: require('../../src/icon_homepage_default.png') },
@@ -91,24 +92,27 @@ renderHeader() {
 
    ]
 
-  return (
+    return (
       <View>
-        <EnochMenuView menuInfos = {menuInfos} onMenuSelected = {this.onMenuSelected}/>
+        <EnochMenuView menuInfos = {menuInfos} onMenuSelecteds = { _ => this.onMenuSelected}/>
           <View style={styles.recommendHeader}>
               <Text style = {{fontSize: 13, color: '#777777'}}>猜你喜欢</Text>
           </View>
       </View>
-  )
-}
+    )
+  }
 
-render() {
-  return (
+  render() {
+    return (
       <View style={{backgroundColor: 'white', flex: 1}}> 
         <View style={{flex: 1}}>
         <FlatList style = {{flex: 1}}
         refreshing = {false}
         data = {this.state.dataList}
-        renderItem={({item}) => <Text style={styles.item}>{item.title}</Text>}
+        renderItem={({item}) => 
+          <TouchableOpacity onPress={ _ => this.onCellSelected(item)}>
+          <Text style = {styles.item}>{item.title}</Text>
+          </TouchableOpacity>}
         getItemLayout={(data, index) => ( {length: 44, offset: 44 * index, index} )}
         ListHeaderComponent = {this.renderHeader}
         />
