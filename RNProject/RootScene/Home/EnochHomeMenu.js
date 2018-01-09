@@ -28,8 +28,7 @@ export default class EnochHomeMenu extends Component {
                 key = {info.title}//没有出现警告
                 icon = {info.icon}
                 title = {info.title}
-                onPress = {_ => {onMenuSelecteds}}>
-                    
+                onPress = { _ => onMenuSelecteds(1)}>  
                 </EnochMenuItem>
             )
         )
