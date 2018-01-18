@@ -121,7 +121,6 @@ export default class EnochHomePage extends PureComponent {
         refreshing = {false}
         data = {this.state.dataList}
         renderItem={(item)=>this.renderItemCell(item)}
-        getItemLayout={(data, index) => ( {length: 44, offset: 44 * index, index} )}
         ListHeaderComponent = { _ => this.renderHeader()}
         />
         </View>
