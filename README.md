@@ -10,7 +10,7 @@
 
 ```
 $ git clone https://github.com/menglzong/EnochRNProiect.git
-$ cd EnochRNProiect
+$ cd RNProject
 ```
 
 2. **Install dependencies** (npm v3+)
