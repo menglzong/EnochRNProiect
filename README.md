@@ -10,7 +10,7 @@
 
 ```
 $ git clone https://github.com/menglzong/EnochRNProiect.git
-$ cd MeiTuan
+$ cd EnochRNProiect
 ```
 
 2. **Install dependencies** (npm v3+)
