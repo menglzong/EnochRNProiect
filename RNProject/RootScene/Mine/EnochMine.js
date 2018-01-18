@@ -8,12 +8,14 @@ import {
 } from 'react-native';
 
 import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
+import { isIphoneX } from 'react-native-iphone-x-helper'
 
 export default class EnochMine extends Component {
+
   render() {
     return (
       <View style={{backgroundColor: 'gray',flex: 1}}> 
-      <View style={{backgroundColor: 'orange', flex: 1, marginTop: 64}}> 
+      <View style={styles.contentContainer}> 
       <ScrollableTabView style = {{backgroundColor: 'white'}} renderTabBar={() => <DefaultTabBar/>} >
       <View tabLabel='Tab1' style = {{backgroundColor: 'black', flex: 1}}>
       <Text style = {{fontSize: 13, color: '#777777'}}>猜你喜欢</Text>
@@ -33,10 +35,8 @@ export default class EnochMine extends Component {
 
 const styles = StyleSheet.create({
   contentContainer: {
-      marginTop: 0,
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      alignItems:'flex-start',
-      width: Dimensions.get('window').width,
+    backgroundColor: 'orange', 
+    flex: 1,
+    marginTop: isIphoneX() ? 84:64,
   },
 })
