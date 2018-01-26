@@ -36,6 +36,10 @@
 		2DCD954D1E0B4F2C00145EB5 /* RNProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RNProjectTests.m */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		BB9F75B9201192B600FFC393 /* RCTTestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9F75B8201192B600FFC393 /* RCTTestManager.m */; };
+		BB9F75C72011BA1B00FFC393 /* EnochTestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9F75C62011BA1B00FFC393 /* EnochTestManager.m */; };
+		BB9F75CD2011C2D100FFC393 /* EnochUIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9F75CC2011C2D100FFC393 /* EnochUIManager.m */; };
+		BB9F75D02011E03800FFC393 /* EnochTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9F75CF2011E03800FFC393 /* EnochTestView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -311,6 +315,14 @@
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		BB9F75B7201192B600FFC393 /* RCTTestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RCTTestManager.h; path = RNProject/RCTTestManager.h; sourceTree = "<group>"; };
+		BB9F75B8201192B600FFC393 /* RCTTestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RCTTestManager.m; path = RNProject/RCTTestManager.m; sourceTree = "<group>"; };
+		BB9F75C52011BA1B00FFC393 /* EnochTestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnochTestManager.h; sourceTree = "<group>"; };
+		BB9F75C62011BA1B00FFC393 /* EnochTestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnochTestManager.m; sourceTree = "<group>"; };
+		BB9F75CB2011C2D100FFC393 /* EnochUIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnochUIManager.h; sourceTree = "<group>"; };
+		BB9F75CC2011C2D100FFC393 /* EnochUIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnochUIManager.m; sourceTree = "<group>"; };
+		BB9F75CE2011E03800FFC393 /* EnochTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnochTestView.h; sourceTree = "<group>"; };
+		BB9F75CF2011E03800FFC393 /* EnochTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnochTestView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -450,6 +462,14 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				BB9F75CB2011C2D100FFC393 /* EnochUIManager.h */,
+				BB9F75CC2011C2D100FFC393 /* EnochUIManager.m */,
+				BB9F75CE2011E03800FFC393 /* EnochTestView.h */,
+				BB9F75CF2011E03800FFC393 /* EnochTestView.m */,
+				BB9F75C52011BA1B00FFC393 /* EnochTestManager.h */,
+				BB9F75C62011BA1B00FFC393 /* EnochTestManager.m */,
+				BB9F75B7201192B600FFC393 /* RCTTestManager.h */,
+				BB9F75B8201192B600FFC393 /* RCTTestManager.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -1028,8 +1048,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB9F75D02011E03800FFC393 /* EnochTestView.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				BB9F75CD2011C2D100FFC393 /* EnochUIManager.m in Sources */,
+				BB9F75B9201192B600FFC393 /* RCTTestManager.m in Sources */,
+				BB9F75C72011BA1B00FFC393 /* EnochTestManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

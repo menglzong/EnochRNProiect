@@ -7,7 +7,7 @@ import {
   Dimensions,
   TextInput
 } from 'react-native';
-
+import {requireNativeComponent} from 'react-native';
 import FlexDirectionBasics from './learning/enochFlex'
 import EnochQQDemo from './learning/enochQQ'
 import EnochNavigator from './learning/enochNavigator'
@@ -17,25 +17,28 @@ import EnochButton from './learning/enochButton'
 import EnochSegmented from './learning/enochSegmented'
 import EnochFlex from './learning/enochFlex'
 
-export default class RNProjectDemo extends Component {
 
-  render() {
-    return (
-      //布局
-      // <FlexDirectionBasics/>
-      //QQ登陆
-      // <EnochQQDemo/>
-      //导航
-      // <EnochNavigator/>
-      //输入文本
-      // <EnochTextInput/>
-      //滚动视图
-      <EnochScrollView/>
-      //Button
-      // <EnochButton/>
-      // <EnochSegmented/>
-      // <EnochTab/>
-      // <EnochFlex/>
-    );
-  }
-}
+// export default class RNProjectDemo extends Component {
+
+//   render() {
+//     return (
+//       //布局
+//       // <FlexDirectionBasics/>
+//       //QQ登陆
+//       // <EnochQQDemo/>
+//       //导航
+//       // <EnochNavigator/>
+//       //输入文本
+//       // <EnochTextInput/>
+//       //滚动视图
+//       <EnochScrollView/>
+//       //Button
+//       // <EnochButton/>
+//       // <EnochSegmented/>
+//       // <EnochTab/>
+//       // <EnochFlex/>
+//     );
+//   }
+// }
+
+module.exports = requireNativeComponent('EnochUI', null);

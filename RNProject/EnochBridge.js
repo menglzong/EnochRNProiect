@@ -2,15 +2,10 @@ import React, { Component } from 'react';
 import {
     View,
     StyleSheet,
-    ScrollView,
-    Dimensions,
     Text, 
 } from 'react-native';
-import { NativeModules } from 'react-native';
-import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
-import { isIphoneX } from 'react-native-iphone-x-helper'
 
-export default class EnochMine extends Component {
+export default class EnochBridge extends Component {
 
 
   state = {
@@ -48,22 +43,3 @@ export default class EnochMine extends Component {
     );
   }
 };
-
-
-const styles = StyleSheet.create({
-  contentContainer: {
-    backgroundColor: 'white', 
-    flex: 1,
-    marginTop: isIphoneX() ? 84:64,
-  },
-  subViews: {
-    backgroundColor: 'white', 
-    flex: 1,
-  },
-  tabBar: {
-    marginTop: 10,
-  },
-  tabBarText: {
-    borderWidth: 0
-  },
-})

@@ -35,6 +35,7 @@ class EnochScrollView extends Component {
 // />
 
 class EnochListView extends Component {
+
     render () {
         return (
             <View style = {{flex: 1}}>
@@ -49,7 +50,7 @@ class EnochListView extends Component {
                 {key: 'Jimmy'},
                 {key: 'Julie'}
                ]}
-               renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+               renderItem={({item}) => <Text style={styles.item} onPress = { _ => {alert('nihao')}}>{item.key}</Text>}
              />
 
             </View>

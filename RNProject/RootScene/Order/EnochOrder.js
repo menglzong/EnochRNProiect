@@ -46,9 +46,9 @@ export default class EnochOrder extends Component {
   }
 
   async requestRecommend() {
-    this.setState({
-      refreshing: true
-  })
+  //   this.setState({
+  //     refreshing: true
+  // })
     try {
         let response = await fetch(recommend)
         let json = await response.json()
@@ -67,12 +67,12 @@ export default class EnochOrder extends Component {
 
         this.setState({
             dataList: list,
-            refreshing: false
+            // refreshing: false
         })
     } catch (error) {
-      this.setState({
-        refreshing: false
-    })
+    //   this.setState({
+    //     refreshing: false
+    // })
     }
   }
 
@@ -80,8 +80,8 @@ export default class EnochOrder extends Component {
     return (
       <View style={{backgroundColor: 'white', flex: 1}}> 
       <FlatList style = {{flex: 1, backgroundColor: 'white'}}
-      onRefresh = {this.requestRecommend}
-      refreshing = {this.state.refreshing}
+      // onRefresh = {this.requestRecommend}
+      // refreshing = {this.state.refreshing}
       data = {this.state.dataList}
       renderItem={(item)=>this.renderItemCell(item)}
       />
